@@ -1,0 +1,39 @@
+<?php
+echo '<link rel="stylesheet" href="/views/index/tabla.css"/>';
+
+$tab=new tabla($_GET["id"]);
+$cls=$tab->clase();
+$cnt=$tab->controller();
+$tip=new tipos();
+$tipos=$tip->records();
+
+
+$error=false;
+if(isset($_POST["deleterecord"])){
+	$s=new registro($_POST["id"]);
+	$s->delete();
+}
+
+if(isset($_POST["addrecord"])){
+	$n=$_POST["nombre"];
+	
+	if(isset($_POST["isai"]))
+		$isai=1;
+	else
+		$isai=0;
+	
+	if($_POST["typ"]=="notkey"){
+		$tipo=$_POST["tipon"];
+	}
+	
+	if($_POST["typ"]=="extkey"){
+		$tab=new tabla($_POST["tipoe"]);
+		$tipo=$tip->addrecord($tab->noprefix,0,$tab->id,$_POST["relacion"],0);
+	}
+	
+	$nr=$tab->addrecord($n,$tipo,$isai);
+	if($nr == 0)$error=true;
+}
+
+
+?>

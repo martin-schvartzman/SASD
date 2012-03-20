@@ -1,0 +1,36 @@
+<?php
+echo '<link rel="stylesheet" href="/views/index/pckview.css"/>';
+$seccion=new seccion($_GET["id"]);
+
+
+
+$si=0;
+$vi=0;
+$ki=0;
+$sclases=array();
+$vclases=array();
+$kclases=array();
+foreach($seccion->vista->sitio->clases() as $c){
+	if($c->ispackaged($seccion->vista->sitio->package->id))
+		$sclases[$si++]=$c;
+	else if($c->ispackaged($seccion->vista->pck->id))
+		$vclases[$vi++]=$c;
+	else
+		$kclases[$ki++]=$c;
+}
+
+
+
+
+
+if(isset($_POST["editpck"])){
+foreach($seccion->vista->sitio->clases() as $c){
+	if($c->ispackaged($seccion->pck->id) && !isset($_POST["package".$c->id]))
+		{$seccion->delpackage($c->id);}
+	if(!$c->ispackaged($seccion->pck->id) && isset($_POST["package".$c->id]))
+		{$seccion->addpackage($c->id);}
+}
+}
+
+//var_dump($_POST);
+?>

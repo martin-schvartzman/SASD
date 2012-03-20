@@ -1,0 +1,29 @@
+<?php
+echo '<link rel="stylesheet" href="/views/index/site.css"/>';
+echo '<script type="text/javascript" src="/exe/index/site.js"></script>';
+
+if(isset($_POST["deleteseccion"])){
+	$s=new seccion($_POST["id"]);
+	$s->delete();
+}
+
+if(isset($_POST["deleteview"])){
+	$s=new vista($_POST["id"]);
+	$s->delete();
+}
+
+if(isset($_POST["deletetabla"])){
+	$s=new tabla($_POST["id"]);
+	$s->delete();
+}
+
+if(isset($_POST["deleterecord"])){
+	$s=new registro($_POST["id"]);
+	$s->delete();
+}
+
+$site=new sitio($_GET["id"]);
+$bdd=$site->bdd();
+
+
+?>

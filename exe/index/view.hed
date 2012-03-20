@@ -1,0 +1,13 @@
+<?php
+echo '<link rel="stylesheet" href="/views/index/view.css"/>';
+echo '<script type="text/javascript" src="/exe/index/view.js"></script>';
+
+if(isset($_POST["deleteseccion"])){
+	$s=new seccion($_POST["id"]);
+	$s->delete();
+}
+
+$view=new vista($_GET["id"]);
+
+
+?>

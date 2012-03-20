@@ -1,0 +1,13 @@
+<?php
+echo '<link rel="stylesheet" href="/views/index/addseccion.css"/>';
+
+//var_dump(new vista($_GET["id"]));
+
+$error=false;
+if(isset($_POST["addseccion"])){
+	$vista=new vista($_GET["id"]); 
+	$nv=$vista->addseccion($_POST["nombre"],"");
+	if($nv == 0)$error=true;
+}
+
+?>

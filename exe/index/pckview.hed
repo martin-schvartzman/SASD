@@ -1,0 +1,31 @@
+<?php
+echo '<link rel="stylesheet" href="/views/index/pckview.css"/>';
+$view=new vista($_GET["id"]);
+
+
+
+$si=0;
+$vi=0;
+$sclases=array();
+$vclases=array();
+foreach($view->sitio->clases() as $c){
+	if($c->ispackaged($view->sitio->package->id))
+		$sclases[$si++]=$c;
+	else
+		$vclases[$vi++]=$c;
+	
+}
+
+
+
+if(isset($_POST["editpck"])){
+foreach($view->sitio->clases() as $c){
+	if($c->ispackaged($view->pck->id) && !isset($_POST["package".$c->id]))
+		{$view->delpackage($c->id);}
+	if(!$c->ispackaged($view->pck->id) && isset($_POST["package".$c->id]))
+		{$view->addpackage($c->id);}
+}
+}
+
+//var_dump($_POST);
+?>

@@ -1,0 +1,13 @@
+#mainnewsite{
+background-color:#aaaaff;
+margin:50px;
+width:800px;
+height:500px;
+margin-left:120px;
+}
+
+#mainnewsite div{
+padding:10px;
+text-align:left;
+margin-left:80px;
+}

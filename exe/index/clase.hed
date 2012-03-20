@@ -1,0 +1,32 @@
+<?php
+echo '<link rel="stylesheet" href="/views/index/clase.css"/>';
+echo '<script type="text/javascript" src="/exe/index/clase.js"></script>';
+$cls=new clase($_GET["id"]);
+
+
+$mk=new makefiles();
+$mk->deletemethod($cls,16);
+
+
+
+
+if(isset($_POST["deletepropiedad"])){
+	$m=new propiedad($_POST["id"]);
+	$m->delete();
+}
+
+if(isset($_POST["deletemetodo"])){
+	$m=new metodo($_POST["id"]);
+	$m->delete();
+}
+
+if(isset($_POST["newmetodo"])){
+	$cls->addmetodo($_POST["nombre"],"");
+}
+
+if(isset($_POST["newpropiedad"])){
+	$cls->addproperty($_POST["nombre"],"");
+}
+
+
+?>

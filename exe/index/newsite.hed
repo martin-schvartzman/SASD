@@ -1,0 +1,14 @@
+<?php
+echo '<link rel="stylesheet" href="/views/index/newsite.css"/>';
+
+$error=false;
+if(isset($_POST["newsite"])){
+$c=new controllersitio();
+$ns=$c->add($_POST["nombre"],$_POST["dominio"],$_POST["bdd"]);
+
+if($ns == 0)$error=true;
+
+}
+
+
+?>

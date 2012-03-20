@@ -1,0 +1,45 @@
+*{
+margin:0px;
+padding:0px;
+border:0px;
+font-family:arial;
+}
+
+input[type="submit"]{
+border: 2px outset buttonface;
+cursor:pointer;
+}
+
+input[type="submit"]:hover{
+font-style:italic;
+}
+
+a,a:link,a:visited{
+color:black;
+text-decoration:none;
+}
+
+#botonera{
+width:20%;
+height:100%;
+position:fixed;
+background-color:#888888;
+float:left;
+padding:50px;
+text-align:left;
+}
+
+#contenido{
+width: 80%;
+min-height: 500px;
+float: left;
+margin-left: 20%;
+}
+
+.sitebutton,#addsitebutton{
+font-weight:bold;
+cursor:pointer;
+width:150px;
+padding-left:50px;
+margin:20px;
+}

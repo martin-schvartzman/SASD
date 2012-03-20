@@ -1,0 +1,14 @@
+<?php
+echo '<link rel="stylesheet" href="/views/index/systemhome.css"/>';
+
+if(isset($_GET["function"])){
+
+	if($_GET["function"]=="deletesite"){
+		$site=new sitio($_GET["id"]);
+		$site->delete();
+	}
+
+
+}
+
+?>

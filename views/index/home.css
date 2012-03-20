@@ -1,0 +1,16 @@
+#mainhome{
+	text-align:center;
+}
+
+#login{
+background-color:#aaaaaa;
+width:500px;
+height:200px;
+margin-top:10%;
+padding:50px;
+}
+
+#button{
+cursor:ponter;
+border: 2px outset buttonface;
+}

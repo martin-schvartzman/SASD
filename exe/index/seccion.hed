@@ -1,0 +1,10 @@
+<?php
+echo '<link rel="stylesheet" href="/views/index/seccion.css"/>';
+echo '<script type="text/javascript" src="/exe/index/seccion.js"></script>';
+
+
+
+$seccion=new seccion($_GET["id"]);
+
+
+?>

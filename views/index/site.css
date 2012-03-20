@@ -1,0 +1,108 @@
+#mainsite{
+background-color:#aaaaff;
+margin:50px;
+width:800px;
+min-height:500px;
+margin-left:120px;
+text-align:left;
+padding:5px;
+}
+
+#addviewbutton,.view,.tabla{
+font-weight:bold;
+cursor:pointer;
+width:300px;
+margin:20px;
+}
+
+.view,.tabla{
+border:solid 1px black;
+}
+
+#vistas,#bdd{
+float: left;
+width: 360px;
+min-height: 400px;
+margin: 10px;
+background-color: blue;
+}
+
+.seccion,.record{
+padding:5px;
+margin-left:28px;
+}
+
+.seccion a, .record a{
+color:#aaaaff; 
+}
+
+#clases,#packages{
+min-height: 100px;
+background-color: blue;
+margin: 20px;
+margin-right: 40px;
+padding-bottom:20px;
+}
+
+.clase{
+margin: 2px;
+padding: 5px;
+float: left;
+width: 171px;
+background-color: white;
+cursor:pointer;
+}
+
+.pck{
+float: left;
+width: 228px;
+padding: 5px;
+margin: 4px;
+background-color: whiteSmoke;
+}
+
+#files{
+margin: 22px;
+min-height: 40px;
+}
+
+#botonerafile{
+height: 44px;
+}
+
+#botonerafile div{
+float: left;
+padding: 12px;
+margin-right: 10px;
+cursor: pointer;
+width: 100px;
+text-align: center;
+}
+
+#botonerafile div.selected{
+background-color: blue;
+font-weight: bold;
+}
+
+#botonerafile div.notselected{
+border-left: 1px solid black;
+border-right: 1px solid black;
+border-top: 1px solid black;
+}
+
+
+#botonerafile div.notselected:hover{
+background-color:yellow;
+}
+
+#filecontent{
+background-color: blue;
+min-height: 75px;
+padding: 10px;
+}
+
+#filecontent div{
+background-color: white;
+height: 500px;
+overflow-y:auto;
+}

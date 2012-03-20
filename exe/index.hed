@@ -1,0 +1,32 @@
+<?php
+
+if(!isset($_SESSION["user"]) || isset($_GET["logout"]) )
+	$_SESSION["user"]=0;
+
+if(isset($_POST["login"])){
+	$c=new controllerusuario();
+	$c->check($_POST["user"],$_POST["pass"]);
+	//$c->add("admin","hp116110a");
+}
+
+
+if(!isset($_GET["cat"]))
+{$category="home";$_SESSION["user"] = 0;}
+else
+{$category=$_GET["cat"];}
+
+if($_SESSION["user"] == 0){
+	$category="home";
+}
+
+echo '<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>';
+echo '<link rel="stylesheet" href="/views/index/index.css"/>';
+include("/exe/index/".$category.".hed");
+$diseno="/views/index/".$category.".inc";
+
+
+$sites=new controllersitio();
+$sites=$sites->get();
+
+
+?>

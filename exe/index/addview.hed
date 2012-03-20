@@ -1,0 +1,16 @@
+<?php
+echo '<link rel="stylesheet" href="/views/index/addview.css"/>';
+
+$site=new sitio($_GET["id"]);
+$tip=new tipos();
+$tip=$tip->vistas(); 
+
+$error=false;
+if(isset($_POST["addview"])){
+	$ns=$site->add($_POST["nombre"],"",$_POST["tipo"]);
+	//var_dump($_POST);
+	if($ns == 0)$error=true;
+}
+
+
+?>

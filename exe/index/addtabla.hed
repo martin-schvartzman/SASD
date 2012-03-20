@@ -1,0 +1,13 @@
+<?php
+echo '<link rel="stylesheet" href="/views/index/addtabla.css"/>';
+
+//var_dump(new vista($_GET["id"]));
+
+$error=false;
+if(isset($_POST["addtabla"])){
+	$bdd=new bdd($_GET["id"]); 
+	$nb=$bdd->addtable($_POST["nombre"]);
+	if($nb == 0)$error=true;
+}
+
+?>

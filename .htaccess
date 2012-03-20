@@ -1,0 +1,19 @@
+Options +FollowSymLinks
+Options +Indexes
+DirectoryIndex redirect.php
+RewriteEngine on
+RewriteRule ^systemhome/$ \redirect.php?cat=systemhome
+RewriteRule ^newsite/$ \redirect.php?cat=newsite
+RewriteRule ^([0-9]+)/site/$ \redirect.php?cat=site&id=$1
+RewriteRule ^([0-9]+)/addview/$ \redirect.php?cat=addview&id=$1
+RewriteRule ^([0-9]+)/deletesite/$ \redirect.php?cat=systemhome&id=$1&function=deletesite
+RewriteRule ^([0-9]+)/addseccion/$ \redirect.php?cat=addseccion&id=$1
+RewriteRule ^([0-9]+)/addtabla/$ \redirect.php?cat=addtabla&id=$1
+RewriteRule ^([0-9]+)/addrecord/$ \redirect.php?cat=addrecord&id=$1
+RewriteRule ^([0-9]+)/pck/$ \redirect.php?cat=pck&id=$1
+RewriteRule ^([0-9]+)/view/$ \redirect.php?cat=view&id=$1
+RewriteRule ^([0-9]+)/pckview/$ \redirect.php?cat=pckview&id=$1
+RewriteRule ^([0-9]+)/seccion/$ \redirect.php?cat=seccion&id=$1
+RewriteRule ^([0-9]+)/pckseccion/$ \redirect.php?cat=pckseccion&id=$1
+RewriteRule ^([0-9]+)/clase/$ \redirect.php?cat=clase&id=$1
+RewriteRule ^([0-9]+)/tabla/$ \redirect.php?cat=tabla&id=$1

@@ -1,0 +1,15 @@
+<?php
+echo '<link rel="stylesheet" href="/views/index/pck.css"/>';
+$site=new sitio($_GET["id"]);
+
+if(isset($_POST["editpck"])){
+foreach($site->clases() as $c){
+	if($c->ispackaged($site->package->id) && !isset($_POST["package".$c->id]))
+		{$site->delpackage($c->id);}
+	if(!$c->ispackaged($site->package->id) && isset($_POST["package".$c->id]))
+		{$site->addpackage($c->id);}
+}
+}
+
+//var_dump($_POST);
+?>

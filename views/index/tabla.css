@@ -1,0 +1,62 @@
+#maintabla{
+background-color:#aaaaff;
+margin:50px;
+width:800px;
+min-height:500px;
+margin-left:120px;
+text-align:left;
+padding:5px;
+}
+
+#registros{
+background-color:blue;
+padding:5px;
+margin:5px;
+}
+
+.registro{
+height: 70px;
+}
+
+.registro div{
+float: left;
+height: 30px;
+text-align: center;
+background-color: white;
+width: 150px;
+padding: 10px;
+margin: 10px;
+}
+
+.clase{
+float: left;
+width: 350px;
+height: 90px;
+padding: 10px;
+margin: 15px;
+background-color: blue;
+}
+
+.clase div{
+text-align: center;
+background-color: white;
+margin: 11px;
+padding: 20px;
+}
+
+#newrecord{
+background-color: blue;
+padding: 16px;
+margin: 5px;
+margin-top: 24px;
+color:white;
+}
+
+.registro .nombre{
+}
+.registro .tipo{
+}
+.registro .isai{
+}
+.registro .delete{
+}

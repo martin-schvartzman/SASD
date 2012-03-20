@@ -1,0 +1,80 @@
+#mainseccion{
+background-color:#aaaaff;
+margin:50px;
+width:800px;
+min-height:500px;
+margin-left:120px;
+text-align:left;
+padding:5px;
+}
+
+.pck{
+float: left;
+width: 215px;
+padding: 5px;
+margin: 4px;
+background-color: whiteSmoke;
+}
+
+#packages{
+min-height: 100px;
+background-color: blue;
+margin: 10px;
+padding-bottom:20px;
+}
+
+#pcksitio,#pckview,#pckseccion{
+margin: 19px;
+margin-bottom: 10px;
+border: 1px solid black;
+padding: 20px;
+}
+
+#files{
+margin: 22px;
+min-height: 40px;
+}
+
+#botonerafile{
+height: 42px;
+}
+
+#botonerafile div{
+float: left;
+padding: 12px;
+margin-right: 10px;
+cursor: pointer;
+width: 115px;
+text-align: center;
+font-size:15px;
+}
+
+#botonerafile div.selected{
+background-color: blue;
+font-weight: bold;
+font-size: 11px;
+padding-bottom: 16px;
+}
+
+#botonerafile div.notselected{
+border-left: 1px solid black;
+border-right: 1px solid black;
+border-top: 1px solid black;
+}
+
+
+#botonerafile div.notselected:hover{
+background-color:yellow;
+}
+
+#filecontent{
+background-color: blue;
+min-height: 75px;
+padding: 10px;
+}
+
+#filecontent div{
+background-color: white;
+height: 500px;
+overflow-y:auto;
+}
