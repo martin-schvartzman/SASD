@@ -81,7 +81,7 @@ class clase{
 		$sql="insert into propiedad (nombre,descripcion,clase) values ('".antinject($nom)."','".antinject($des)."',".$this->id.")";
 		$x=$this->conexion->insert($sql);
 		$mk=new makefiles();
-		$mk->addproperty(antinject($nom),$this,null,$x);
+		//$mk->addproperty(antinject($nom),$this,null,$x);
 		return $x;
 	}
 	

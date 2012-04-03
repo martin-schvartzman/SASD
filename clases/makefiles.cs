@@ -303,7 +303,7 @@ class ".$nom."{
 	}
 	
 	public function delete(){
-		\$sql=\" delete from ".$nom." where id=\".\$this->id;
+		\$sql=\" delete from ".$tab." where id=\".\$this->id;
 		\$this->conexion->delete(\$sql);
 	}
 	
@@ -328,12 +328,12 @@ class controller".$nom."{
 	
 	private \$conexion;
 	
-	public function ".$nom."(\$id){
+	public function controller".$nom."(){
 		\$this->conexion=new bd(\"".$bdd."\");
 	}
 	
 	public function traer(\$page=1,\$amount=30){
-		\$sql=\"select id from ".$tab." limit \".((\$page - 1) * \$amount - 1).\",\".\$amount.\"\"; 
+		\$sql=\"select id from ".$tab." limit \".(\$page  * \$amount - \$amount).\",\".\$amount.\"\"; 
 		\$re=\$this->conexion->query(\$sql);
 		\$i=0;\$records=array();
 		foreach(\$re as \$r){
@@ -396,8 +396,8 @@ class controller".$nom."{
 		$m2=$this->conexion->insert($sql);
 		$f=str_replace("/* newmethod */",
 "/* method id=".$m1." */
-	public function array".$claselocal."(){
-		\$sql=\"select id from ".$loc->nombre." where ".$record."=\".\$this->id.\" limit \".((\$page - 1) * \$amount - 1).\",\".\$amount.\"\"; 
+	public function array".$claselocal."(\$page=1,\$amount=30){
+		\$sql=\"select id from ".$loc->nombre." where ".$record."=\".\$this->id.\" limit \".(\$page * \$amount - \$amount).\",\".\$amount.\"\"; 
 		\$re=\$this->conexion->query(\$sql);
 		\$i=0;\$records=array();
 		foreach(\$re as \$r){
@@ -460,9 +460,9 @@ class controller".$nom."{
 			$params[$i]="\$".$reg[$i]->noprefix;
 			$columns[$i]=$reg[$i]->nombre;
 			if($reg[$i]->tipo->isint == 0){
-				$values[$i]="\".antinject(\".".$params[$i].".\").\"";
+				$values[$i]="\".antinject(".$params[$i].").\"";
 			}else{
-				$values[$i]="'\".antinject(\".".$params[$i].".\").\"'";
+				$values[$i]="'\".antinject(".$params[$i].").\"'";
 			}
 		}
 		$params=implode(",",$params);
@@ -502,7 +502,7 @@ class controller".$nom."{
 		$sets=implode(",",$sets);
 		$rep=
 "	public function edit(".$params."){
-		\$sql=\"update ".$cls->tabla->nombre." set ".$sets." \";
+		\$sql=\"update ".$cls->tabla->nombre." set ".$sets." where id=\".\$this->id;
 		\$this->conexion->delete(\$sql);
 	}";
 	//var_dump($rep);

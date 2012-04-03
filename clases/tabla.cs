@@ -72,10 +72,16 @@ class tabla{
 		}
 		
 		$typ=new tiporecord($tipo);
+		
+		
+		if($typ->extkey == 0){
 		$sql="alter table ".$this->nombre." add column ".$this->prefijo."_".antinject($nombre)." ".$typ->nombre.$ai;
-		//echo $sql;
-		//var_dump($this->con);
 		$this->con->delete($sql);
+		}else{
+		$sql="alter table ".$this->nombre." add column ".$this->prefijo."_".antinject($nombre)." bigint".$ai;
+		$this->con->delete($sql);
+		}
+		
 		//add propiedad en clase  OK
 		$sql="select id from clase where tabla=".$this->id." and not controller = 0 ";
 		$cls=$this->conexion->get($sql);
